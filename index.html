@@ -365,7 +365,7 @@
         }
 
         .sponsor-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             color: #333;
             margin-bottom: 15px;
@@ -378,10 +378,52 @@
         }
 
         .sponsor-bank {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: #764ba2;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .account-number {
+            margin-top: 5px;
+        }
+
+        .account-with-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .copy-button:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+
+        .copy-button.copied {
+            background: #28a745;
         }
 
         footer {
@@ -774,7 +816,7 @@
                         <div class="contact-card">
                             <div class="contact-name">주관기 회장 정재욱</div>
                             <div class="contact-phone"><a href="tel:010-3387-9393">☎ 010-3387-9393</a></div>
-                            <div class="contact-account">📧 Band : <a href="band://group/2404927">www.band.us/band/2404927</a></div>
+                            <div class="contact-account">📧 Band : <a href="https://www.band.us/band/2404927">www.band.us/band/2404927</a></div>
                         </div>
                         <div class="contact-card">
                             <div class="contact-name">사무국장 최병화</div>
@@ -789,9 +831,18 @@
             <div class="section">
                 <div class="section-title">찬조 안내</div>
                 <div class="sponsor-section">
-                    <div class="sponsor-title">친구들의 많은 응원이 필요합니다. <br/>행사 찬조는 아래 계좌로 부탁드립니다.</div>
+                    <div class="sponsor-title">친구들의 많은 응원이 필요해. <br/>찬조는 아래 계좌로 부탁해.</div>
                     <div class="sponsor-info">
-                        <div class="sponsor-bank">농협은행 351-4144-0957-73</div>
+                        <div class="sponsor-bank">
+                            <div>
+                                농협은행<br/>
+                                <div class="account-with-button">
+                                    <span id="accountNumber">351-4144-0957-73</span>
+                                    <button class="copy-button" onclick="copyAccountNumber(this)" title="계좌번호 복사">📋</button>
+                                </div>
+                            </div>
+                            
+                        </div>
                         <div>예금주 : 김수정(금성초등43회 총무)</div>
                     </div>
                 </div>
@@ -893,6 +944,22 @@
                 introScreen.classList.add('hidden');
             }, 3000); // 3초 후 숨김
         });
+
+        // 계좌번호 복사 함수
+        function copyAccountNumber(button) {
+            const accountNumber = document.getElementById('accountNumber').textContent;
+            navigator.clipboard.writeText(accountNumber).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✓';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('복사 실패: ' + err);
+            });
+        }
 
         // 이미지 슬라이더 함수
         function initImageSlider() {
