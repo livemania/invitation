@@ -87,7 +87,7 @@
         .invitation-card {
             background: #f8f9fa;
             border-left: 5px solid #667eea;
-            padding: 40px;
+            padding: 30px;
             margin-bottom: 40px;
             border-radius: 8px;
         }
@@ -95,8 +95,8 @@
         .invitation-text {
             font-size: 16px;
             line-height: 1.8;
-            color: #333;
-            margin-bottom: 30px;
+            color: #667eea;
+            margin-bottom: 20px;
             text-align: center;
         }
 
@@ -127,6 +127,63 @@
             font-size: 18px;
             color: #333;
             font-weight: 500;
+        }
+
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: #f5f5f5;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slider-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .indicator.active {
+            background: #667eea;
+            transform: scale(1.2);
         }
 
         .section {
@@ -185,7 +242,7 @@
         }
 
         .location-address {
-            font-size: 15px;
+            font-size: 13px;
             color: #666;
             line-height: 1.8;
             margin-bottom: 15px;
@@ -224,6 +281,16 @@
             line-height: 1.6;
         }
 
+        .access-text ul {
+            list-style: disc;
+            margin: 10px 0 10px 20px;
+            padding-left: 20px;
+        }
+
+        .access-text li {
+            margin-bottom: 6px;
+        }
+
         .contact-section {
             background: #f8f9fa;
             padding: 30px;
@@ -259,13 +326,62 @@
 
         .contact-phone {
             font-size: 13px;
-            color: #667eea;
             margin-bottom: 8px;
+        }
+
+        .contact-phone a {
+            color: #667eea;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .contact-phone a:hover {
+            color: #444;
         }
 
         .contact-account {
             font-size: 12px;
             color: #999;
+        }
+
+        .contact-account a {
+            color: #667eea;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .contact-account a:hover {
+            color: #444;
+        }
+
+        .sponsor-section {
+            background: #f8f9fa;
+            border-left: 5px solid #764ba2;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .sponsor-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .sponsor-info {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .sponsor-bank {
+            font-size: 20px;
+            font-weight: 600;
+            color: #764ba2;
+            margin-top: 10px;
         }
 
         footer {
@@ -286,6 +402,84 @@
             font-weight: 600;
             color: #667eea;
             margin-top: 15px;
+        }
+
+        /* Calendar Styles */
+        .calendar-container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .calendar-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar-table th {
+            background: #f8f9fa;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #667eea;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .calendar-table td {
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            border: 1px solid #f0f0f0;
+            height: 45px;
+            vertical-align: middle;
+        }
+
+        .calendar-table td.empty {
+            background: #fafafa;
+            color: #ccc;
+        }
+
+        .calendar-table td.event-day {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .calendar-table td.other-month {
+            color: #ccc;
+            background: #fafafa;
+        }
+
+        /* D-Day Badge */
+        .dday-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            letter-spacing: 1px;
         }
 
         /* Intro Screen Styles */
@@ -311,42 +505,56 @@
         }
 
         .intro-content {
+            max-width: 900px;
+            width: 100%;
+            height: 100%;
             text-align: center;
             color: white;
             position: relative;
             z-index: 1;
+            background-image: url('intro.png');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px;
+            border-radius: 12px;
         }
 
         .intro-image {
-            width: 250px;
-            height: 250px;
+            width: 550px;
+            margin-top: 0px;
             margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 100px;
-            backdrop-filter: blur(10px);
+            object-fit: cover;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         .intro-title {
             font-size: 48px;
             font-weight: 700;
+            color: black;
             margin-bottom: 15px;
             letter-spacing: 2px;
         }
 
         .intro-subtitle {
-            font-size: 20px;
-            font-weight: 300;
+            font-size: 32px;
+            font-weight: 600;
+            color: #494848;
             opacity: 0.9;
             letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
             .main-title {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .subtitle {
@@ -366,9 +574,12 @@
             }
 
             .intro-image {
-                width: 180px;
-                height: 180px;
-                font-size: 80px;
+                display: none;
+            }
+
+            .intro-content {
+                padding: 40px 20px;
+                min-height: 500px;
             }
 
             .intro-title {
@@ -378,30 +589,55 @@
             .intro-subtitle {
                 font-size: 16px;
             }
+
+            .dday-badge {
+                display: block;
+                margin-left: 0;
+                margin-top: 10px;
+                width: fit-content;
+            }
         }
         #map {
             width: 100%;
             height: 350px;
             border-radius: 8px;
             margin-bottom: 20px;
+            background-image: url('map.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        #party-map {
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-image: url('party.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
         }
     </style>
-    <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=kyb0lf8cuk"></script>
+
 </head>
 <body>
     <!-- Intro Screen -->
     <div class="intro-screen" id="introScreen">
         <div class="intro-content">
-            <div class="intro-image">🏆</div>
-            <div class="intro-title">동문 체육대회</div>
-            <div class="intro-subtitle">함께 만드는 추억, 함께 하는 즐거움</div>
+            <!--<div class="intro-title">봄..</div>
+            <div class="intro-subtitle">보고싶다. 친구야!!</div>-->
         </div>
     </div>
 
     <div class="container">
         <header>
             <div class="header-content">
-                <div class="main-title">동문 체육대회</div>
+                <div class="main-title">제 17회 금성 동문 가족 대잔치</div>
                 <div class="subtitle">함께 만드는 추억, 함께 하는 즐거움</div>
             </div>
         </header>
@@ -409,41 +645,75 @@
         <div class="content">
             <div class="invitation-card">
                 <div class="invitation-text">
-                    안녕하세요. 따뜻한 봄날 우리 대학 동문들이 한자리에 모여<br>
-                    건강한 체력과 돈독한 우정을 나눌<br>
-                    동문 체육대회를 개최합니다.<br><br>
-                    여러분의 많은 참여를 기대하며<br>
-                    정성스런 초대장을 드립니다.
+                    흙먼지 날리며 왠종일 뛰어다니던 시간.<br>
+                    고무줄 놀이와 딱지치기에<br>
+                    시간가는 줄 몰랐던 시절.<br><br>
+                    삶이 바빠 잠시 잊고 있었던<br>
+                    우리들의 가장 순수했던 시간을
+                    다시 함께 하지 않을래?
                 </div>
+            </div>
+
+            <!-- 이미지 슬라이더 -->
+            <div class="image-slider">
+                <div class="slider-wrapper">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="slider-item">
+                            <img src="6-1.png" alt="추억1">
+                        </div>
+                        <div class="slider-item">
+                            <img src="6-2.png" alt="추억2">
+                        </div>
+                        <div class="slider-item">
+                            <img src="6-3.png" alt="추억3">
+                        </div>
+                        <div class="slider-item">
+                            <img src="6-4.png" alt="추억4">
+                        </div>
+                        <div class="slider-item">
+                            <img src="6-5.png" alt="추억5">
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-indicators" id="sliderIndicators"></div>
             </div>
 
             <div class="event-details">
                 <div class="detail-item">
                     <div class="detail-label">행사 일시</div>
-                    <div class="detail-content">2026년 3월 21일 (토)<br>오전 9:00 ~ 오후 5:00</div>
+                    <div class="detail-content">2026년 4월 18일 (토) 12:50 ~ 17:30</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-label">행사 장소</div>
-                    <div class="detail-content">대학 운동장<br>신윤관 체육관</div>
+                    <div class="detail-content">금성초등학교 2층 강당</div>
                 </div>
             </div>
 
-            <!-- 갤러리 섹션 -->
+            <!-- 행사일정 섹션 -->
             <div class="section">
-                <div class="section-title">프로그램</div>
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <span>축구<br>경기</span>
+                <div>
+                    <div class="section-title">행사일정</div>
+                    <div class="dday-badge" id="ddayBadge">D-Day</div>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="calendar-title" id="calendarTitle"></div>
                     </div>
-                    <div class="gallery-item">
-                        <span>배구<br>경기</span>
-                    </div>
-                    <div class="gallery-item">
-                        <span>플로어<br>하키</span>
-                    </div>
-                    <div class="gallery-item">
-                        <span>장기<br>자랑</span>
-                    </div>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarBody">
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -453,18 +723,41 @@
                 <div class="location-info">
                     <div class="location-title">주소</div>
                     <div class="location-address">
-                        경남 진주시 금성로 32<br>
-                        진주금성국민학교 운동장<br>
-                        Tel: 055-123-4567
+                        경남 진주시 말티고개로123번길 19<br>
+                        금성초등학교 2층 강당<br>
                     </div>
                 </div>
                 <div id="map"></div>
                 <div class="access-info">
                     <div class="access-title">교통 안내</div>
                     <div class="access-text">
-                        KTX 진주역에서 택시로 약 10분<br>
-                        버스: 진주역 - 금성동 행 버스 이용<br>
-                        자가용: 진주금성국민학교 운동장 (주차장 완비)
+                        <strong>버스:</strong>
+                        <ul>
+                            <li>진주역 - 150, 151, 200, 210 버스 이용</li>
+                            <li>고속버스터미널 - 251, 252, 353, 470 버스 이용</li>
+                            <li>시외버스터미널 - 372, 373, 375, 377 버스 이용</li>
+                        </ul>
+                        <strong>자가용:</strong> 진주금성국민학교 운동장
+                    </div>
+                </div>
+            </div>
+
+            <!-- 뒷풀이 섹션 -->
+            <div class="section">
+                <div class="section-title">뒷풀이 장소</div>
+                <div class="location-info">
+                    <div class="location-title">주소</div>
+                    <div class="location-address">
+                        경남 진주시 대평면 금성로 422-82<br>
+                        Tel: 055-759-2288
+                    </div>
+                </div>
+                <div id="party-map"></div>
+                <div class="access-info">
+                    <div class="access-title">안내</div>
+                    <div class="access-text">
+                        <strong>시간:</strong> 행사 종료 후 (약 18:00~)<br>
+                        <strong>참석:</strong> 자유 참석<br>
                     </div>
                 </div>
             </div>
@@ -474,59 +767,173 @@
                 <div class="section-title">참여 문의</div>
                 <div class="contact-section">
                     <div class="contact-intro">
-                        동문회 사무국 또는 학년별 담당자에게 연락주시면<br>
+                        동문회 사무국에 연락주시면<br>
                         성의껏 안내해드리겠습니다.
                     </div>
                     <div class="contact-items">
                         <div class="contact-card">
-                            <div class="contact-name">동문회 사무국</div>
-                            <div class="contact-phone">☎ 02-123-4567</div>
-                            <div class="contact-account">📧 alumni@university.ac.kr</div>
+                            <div class="contact-name">주관기 회장 정재욱</div>
+                            <div class="contact-phone"><a href="tel:010-3387-9393">☎ 010-3387-9393</a></div>
+                            <div class="contact-account">📧 Band : <a href="band://group/2404927">www.band.us/band/2404927</a></div>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-name">사무국장 김철수</div>
-                            <div class="contact-phone">☎ 010-1234-5678</div>
+                            <div class="contact-name">사무국장 최병화</div>
+                            <div class="contact-phone"><a href="tel:010-2503-8540">☎ 010-2503-8540</a></div>
                             <div class="contact-account">참가 신청 담당</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 찬조 계좌 섹션 -->
+            <div class="section">
+                <div class="section-title">찬조 안내</div>
+                <div class="sponsor-section">
+                    <div class="sponsor-title">친구들의 많은 응원이 필요합니다. <br/>행사 찬조는 아래 계좌로 부탁드립니다.</div>
+                    <div class="sponsor-info">
+                        <div class="sponsor-bank">농협은행 351-4144-0957-73</div>
+                        <div>예금주 : 김수정(금성초등43회 총무)</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <div class="footer-text">© 2026 Alumni Sports Day</div>
-            <div class="footer-text">All rights reserved by Alumni Association</div>
-            <div class="footer-logo">🏫 대학교 동문회</div>
+            <div class="footer-text">© 2026</div>
+            <div class="footer-text">All rights reserved by 43's community</div>
+            <div class="footer-logo">🏫 43회 주관기</div>
         </footer>
     </div>
     <script>
+        // D-Day 계산 함수
+        function calculateDDay() {
+            const eventDate = new Date(2026, 3, 18); // 2026년 4월 18일 (4월은 3 - 0 기반 인덱싱)
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            eventDate.setHours(0, 0, 0, 0);
+            
+            const diffTime = eventDate - today;
+            const diffDate = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const ddayBadge = document.getElementById('ddayBadge');
+            if (diffDate > 0) {
+                ddayBadge.textContent = `D-${diffDate}`;
+            } else if (diffDate === 0) {
+                ddayBadge.textContent = 'D-Day';
+            } else {
+                ddayBadge.textContent = `D+${Math.abs(diffDate)}`;
+            }
+        }
+
+        // 캘린더 생성 함수
+        function generateCalendar(year, month) {
+            const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+            const firstDay = new Date(year, month - 1, 1).getDay();
+            const daysInMonth = new Date(year, month, 0).getDate();
+            const daysInPrevMonth = new Date(year, month - 1, 0).getDate();
+            
+            const calendarTitle = document.getElementById('calendarTitle');
+            calendarTitle.textContent = `${year}년 ${monthNames[month - 1]}`;
+            
+            const calendarBody = document.getElementById('calendarBody');
+            calendarBody.innerHTML = '';
+            
+            let date = 1;
+            let nextMonthDate = 1;
+            
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    
+                    if (i === 0 && j < firstDay) {
+                        // 이전 달의 날짜
+                        cell.textContent = daysInPrevMonth - firstDay + j + 1;
+                        cell.classList.add('other-month');
+                    } else if (date > daysInMonth) {
+                        // 다음 달의 날짜
+                        cell.textContent = nextMonthDate;
+                        cell.classList.add('other-month');
+                        nextMonthDate++;
+                    } else {
+                        // 현재 달의 날짜
+                        cell.textContent = date;
+                        // 2026년 4월 18일 강조
+                        if (year === 2026 && month === 4 && date === 18) {
+                            cell.classList.add('event-day');
+                        }
+                        date++;
+                    }
+                    
+                    row.appendChild(cell);
+                }
+                
+                calendarBody.appendChild(row);
+                
+                if (date > daysInMonth && nextMonthDate > 1) {
+                    break;
+                }
+            }
+        }
+
         // Intro Screen - 3초 후 자동 전환
         window.addEventListener('load', function() {
+            // D-Day 계산
+            calculateDDay();
+            
+            // 캘린더 생성
+            generateCalendar(2026, 4);
+            
+            // 이미지 슬라이더 초기화
+            initImageSlider();
+            
             const introScreen = document.getElementById('introScreen');
             setTimeout(function() {
                 introScreen.classList.add('hidden');
             }, 3000); // 3초 후 숨김
         });
 
-        // 네이버 지도 초기화
-        var mapOptions = {
-            center: new naver.maps.LatLng(35.189, 128.089),
-            zoom: 15
-        };
-        var map = new naver.maps.Map('map', mapOptions);
-        
-        // 마커 표시
-        var marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(35.189, 128.089),
-            map: map,
-            title: '진주금성국민학교'
-        });
-        
-        // 정보창
-        var infoWindow = new naver.maps.InfoWindow({
-            content: '<div style="background-color: white; padding: 10px; border-radius: 4px; font-size: 13px;"><strong>진주금성국민학교</strong><br>경남 진주시 금성로 32</div>'
-        });
-        infoWindow.open(map, marker);
+        // 이미지 슬라이더 함수
+        function initImageSlider() {
+            const sliderContainer = document.getElementById('sliderContainer');
+            const sliderPrev = document.getElementById('sliderPrev');
+            const sliderNext = document.getElementById('sliderNext');
+            const sliderIndicators = document.getElementById('sliderIndicators');
+            
+            let currentIndex = 0;
+            const totalItems = 5;
+            
+            // 인디케이터 생성
+            for (let i = 0; i < totalItems; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+                indicator.addEventListener('click', () => goToSlide(i));
+                sliderIndicators.appendChild(indicator);
+            }
+            
+            // 슬라이드 이동 함수
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+            
+            // 슬라이더 업데이트
+            function updateSlider() {
+                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // 인디케이터 업데이트
+                document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // 자동 슬라이드 (5초마다)
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateSlider();
+            }, 5000);
+        }
     </script>
 </body>
 </html>
